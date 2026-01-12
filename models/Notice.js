@@ -1,5 +1,3 @@
-const mongoose = require("mongoose");
-
 const noticeSchema = new mongoose.Schema(
   {
     noticeTitle: {
@@ -24,7 +22,7 @@ const noticeSchema = new mongoose.Schema(
     },
     noticeType: {
       type: String,
-      required: true, 
+      required: true,
     },
     publishDate: {
       type: String,
@@ -33,6 +31,13 @@ const noticeSchema = new mongoose.Schema(
     noticeBody: {
       type: String,
       default: null,
+    },
+
+    // ✅ STATUS ENUM
+    status: {
+      type: String,
+      enum: ["Published", "Draft", "Unpublished"],
+      default: "Published",
     },
   },
   { timestamps: true }
