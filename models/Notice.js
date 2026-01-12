@@ -32,8 +32,6 @@ const noticeSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
-
-    // ✅ STATUS ENUM
     status: {
       type: String,
       enum: ["Published", "Draft", "Unpublished"],
